@@ -34,7 +34,13 @@
     header{
         height: 210px;
         background-color: #f5f4ef;
-    }    
+    }   
+    div{ -webkit-touch-callout: none;
+        user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-user-select: none;
+   } 
     #topm{
         width: 1240px;
         margin: 0 auto;
