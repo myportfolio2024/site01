@@ -1,0 +1,128 @@
+    body{
+        font-family: 'Nanum Gothic', sans-serif;
+        font-size: 14px; 
+        color: #212121;
+    }
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    img{
+        border: 0;
+    }
+    video{
+        border: 0;
+    }
+    a{ 
+        text-decoration: none;
+        color: #212121;
+    }
+    li{ font-size: 14px; 
+        list-style: none;
+        display: inline-block;
+        /*color: black;*/
+        text-decoration: none;
+    }
+    .wrap{
+        width: 1240px; 
+        /*background-color: yellowgreen;*/
+        margin: 0 auto;
+    }
+    .clear{
+        clear: both;        
+    }
+    header{
+        height: 210px;
+        background-color: #f5f4ef;
+    }    
+    #topm{
+        width: 1240px;
+        margin: 0 auto;
+    }
+    #topm ul{
+        float: right;
+        width: 360px; 
+        margin-top: 15px;        
+    }
+    #topm li {
+        vertical-align: middle;        
+        margin-left: 1px;   
+        font-size: 14px; 
+        font-family: 'Nanum Gothic', sans-serif;
+    } /*a태그는 인라인이라 정렬 안먹혀서 li에 적용*/ 
+    #topm li a{
+        color: darkgray;
+        margin: 0 1px;        
+    } 
+    #topm li a:hover{
+        color: black;                
+    } 
+    #topm li img{
+        margin-top:6px;
+    }
+    #logo{
+        float: left;
+    }    
+    nav{        
+        float: left;
+        margin-left: 60px;
+        height: 100px;
+        line-height: 100px;        
+        /*background-color: yellow;*/
+    }  /*영역확인하려고 백그라운드칼라 썼음*/
+    nav ul{
+        width: 800px;        
+    }
+    nav li{
+        margin-left: 120px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: 'Noto Sans KR', sans-serif;
+    }
+    nav li a{        
+        color: #333333;
+    }
+    nav li a:hover{
+        color: black;
+        /*font-weight: bold;*/
+    }
+   /* 푸터 영역 시작 */
+    footer{
+        background-color: #262626;
+        color: #828282;
+        padding: 50px 0; 
+        text-align: center;
+        font-size: 1em;
+    }
+    #wfooter{
+        margin: 0 auto;
+        width: 1000px;
+        /*background-color: aqua;*/
+        height: 100px;  
+    }/*바디 영역에서 클래스 wrap을 적용했는데
+    여기에서 너비 값을 다시 지정해줘도 오류안나는지 모르겠다*/
+    #lfooter{
+        height: 100px; 
+        width: 100px;
+        float: left;
+        /*vertical-align: middle;*/
+        /*background-color: blue;*/
+        text-align: center;
+        vertical-align: middle;
+         
+    }/*주어진 영역 내 이미지 가운데 비치 어케하나*/
+    #lfooter img{
+        width: 100px;
+    }
+    #rfooter{         
+        /*margin-left: 100px;*/
+        float: left;
+        width: 900px;
+        font-size: 0.9em;
+        height: 100px; 
+        line-height: 2em;
+        /*background-color: violet;*/       
+    }   
+    #rfooter li a{
+        color: #828282;
+    }    

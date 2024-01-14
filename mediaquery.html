@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<title>반응형 웹페이지 제작</title>    
+<style>/*미디어쿼리 필요*/
+    div{
+    border:10px solid green;
+    font-size:60px;
+    }
+    
+    
+    @media(min-width:800px){
+        div{
+            display: none; /*none을 쓰면 안보이게 함*/
+        }
+    }/*화면이 최소 800픽셀이상일 때 적용. 
+    미디어쿼리의 크기조건을 만족해야 css효과가 나타난다.*/ 
+
+    /*
+    @media(min-width:800px){
+        div{
+            display: none; 
+        }
+    } 화면이 최대 800픽셀이상일 때 적용 
+    */   
+</style>
+</head>
+<body>
+<div>
+    Resoponsive    
+</div>    
+</body>
+</html>

@@ -1,0 +1,115 @@
+    #submain{  
+        margin-top: 50px;              
+        margin-bottom: 100px;
+    }
+    #submain img{      
+    }
+    #submain #subtitle{
+        margin: 0 auto;
+    }
+    #content1 .bigfont{
+        font-size: 1.1em;
+        color: #555555;
+        /*font-weight:600;*/
+        letter-spacing: 0.2em;;
+    }
+    #content1{
+        width:1000px; margin: 0 auto;
+        background-color: #f9f9f9f9;  
+        margin-bottom: 70px;
+        font-size: 16px;
+        border: 1px solid lightgray;
+        border-radius: 5px;        
+    }    
+    #content1 #find{         
+        padding: 30px;
+        margin: 0 auto;         
+    } 
+    #content1 #find option:hover{
+        color: red;
+    }
+    #content1 ul{
+        width:  1000px;
+        margin: 0 auto;
+    }
+    #content1 .list1{
+        font-size: 14px;
+        width: 200px;
+        height: 25px;
+        color: #555555;        
+    }  
+    #content1 .list2{
+        font-size: 14px;
+        width: 200px;
+        height: 22px;
+        color: #888888; 
+    }
+    #content1 .list3{
+        font-size: 14px;
+        width: 50px;
+        height: 24px; 
+        color: #555555; 
+    }
+    #content1 #find p{       
+    }    
+    #content1 #find ul{
+        text-align: center;
+    }
+    #content1 #find li{
+        margin-left: 30px;
+    }
+    #content1 #find_icon{
+        padding: 30px;
+        margin: 0 auto;                     
+    }
+    #content1 #find_icon .icon{
+        width:  750px;
+        margin: 0 auto;         
+        text-align: center;
+        line-height: 2em;
+    }
+    #content1 #find_icon .icon ul{      
+          margin-left: 100px;
+    }
+    #content1 #find_icon .icon li{
+        margin-left: 50px;
+        margin-bottom: 20px;
+    }
+    #content1 #find_icon .icon li p{
+        font-size: 0.9em;
+        color: #777777;   
+    }
+    #content1 #find_icon img:hover{
+        transform: rotate(10deg);
+    }
+    #content2{
+        padding: 50px 0;
+        margin: 0 auto;
+        margin-bottom: 70px;
+    }
+    #content2 table{
+        border-collapse: collapse;
+        margin: 0 auto;
+        width: 1000px;
+        text-align: center;
+    }
+    #content2 table tbody tr:nth-child(even):hover{
+        background-color: #f9f9f9;
+    }/*table 영역에서 짝수번째 줄에 대한 속성제어*/
+    #content2 table tbody tr:nth-child(odd):hover{
+        background-color: lightgoldenrodyellow;
+    }/*table 영역에서 홀수번째 줄에 대한 속성제어*/
+    #content2 table th{
+        background-color: #f9f9f9;
+        font-size: 1.2em;
+        color: #555555;
+    }
+    #content2 table th,td{
+        padding: 20px;        
+    }
+    #content2 table td{
+        border-bottom: 1px dotted lightgray;
+    }    
+    #content3{
+       /*margin-bottom: 50px;*/
+    }    

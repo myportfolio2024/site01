@@ -1,0 +1,213 @@
+    #main{         
+        height: 600px;
+        /*background: url(images/main1.jpg) 
+                    no-repeat center;*/
+        /*background-size: cover;*/
+        /*margin-bottom: 5px;*/
+     }
+    .wrap{
+        width: 1240px; 
+        /*background-color: yellowgreen;*/
+        margin: 0 auto;
+    }           
+    #content1{
+       background-color: aquamarine;
+       /*margin-bottom: 10px;*/
+    }/*content1와 content2를띄우기 위해서 content1에 마진바틈을 줬는데 안먹힘*/    
+     #content1 .c1{
+        margin-bottom: 30px;
+        width: 400px;
+        height: 302px;
+        float: left;
+        margin-right: 13px;        
+    }
+    #content1 .c1 img{
+        border: 1px solid white;
+    }/* 링크된 이미지에 마우스 오버시 보더를 생기게 했을 때
+    보더가 없다가 생기면 보더가 생긴만큼 이미지가 이동해버림.
+    처음부터 이미지에 눈에 안보이는 흰색보더를 만들어놓고
+    마우스 오버시에 이미지 보더에 색상을 줘서
+    마치 보더가 없다 생긴 것 같은 효과를 줌.
+    이미지에 마우스 오버시 보더 생기게 하는 이유
+    : 이미지에 링크 걸려있다는 것 알려줄려고*/
+    #content1 .c1 img:hover{
+        border: 1px dashed #848c7f;
+    }
+    #content2{
+        margin-bottom: 30px;
+        height: 520px;
+        background: url(images/main_16.jpg) no-repeat center ;
+        background-size: 100%;
+        background-position: bottom;
+        /*margin-top: 10px;*/
+    }/* background-size: cover;*/
+    
+    #content2 span{
+        text-align: right;        
+    }
+    #content2{
+        border: 1px dashed white;
+    }
+    #content2:hover{
+        border: 1px dashed #f9c74e;
+        
+    }/*border-style*/
+    #content3{
+        padding-top:25px;
+        background-color: #fde5a9;
+        margin-left: 15px;
+        height: 300px;
+        margin-bottom: 20px;        
+    }     
+    #content3 .c3{
+        margin: 0 auto;
+        float: left;
+        width: 280px;
+        margin-right: 10px;
+        background-color: white;
+        padding: 10px 10px 0px 10px;
+        text-align: center; 
+        line-height: 1.5em;
+        font-size: 15px;
+        /*margin-bottom: 20px;*/        
+    }/*패딩 순서 : 상우하좌*/    
+    /*#content3 .c3 span{
+        border: 1px solid gray;
+        padding: 1px 5px;
+        border-radius: 10px;
+        background-color: #DCDCDC;
+        text-align: center;
+        vertical-align: middle;
+        color: #333333;}*/    
+    .bigfont{
+        font-size: 1.2em;        
+    }
+    #content3 .c3:hover{
+        color: #444444;         
+    }    
+    #content3 .c3 img{
+        margin-top: 20px;
+        width: 285px;        
+    }
+    .more1{
+        padding: 1px 5px;
+        border-radius: 10px;
+        background-color: #DCDCDC;
+        text-align: center;
+        vertical-align: middle;
+        /*color: #333333;*/
+    }    
+    #content4{       
+        height: 480px;
+        margin-bottom: 30px;
+        /*background-color: blue;*/
+    }
+    #content4 .c4{        
+        width: 400px;
+        height: 474px;
+        margin: 20px 6px;
+        display: inline-block;
+        float: left;  
+        background-color: #d8ddd6;         
+    }
+    #content4 .c4 .c4_1{
+        /*width: 95%;*/
+        font-size: 16px;
+        line-height: 2em;
+        height: 170px;
+        text-align: justify;/*글자 양쪽 정렬*/
+    }
+    #content4 .c4 .c4_2{
+        height: 293px;
+    }
+    #content4 .c4 img{ 
+        /*width: 400px;*/
+    }    
+    #content4 .c4 p{
+        margin: 10px;
+        line-height: 130%;
+    }
+    #content4 .bigfont{
+        border-left: 7px solid #a4b99d;
+        letter-spacing: 1px;
+        background-color: #b4b9b2;
+        padding: 3px;
+    }   
+    #content4 .c4 a:hover{
+        color:#444444;
+    }
+    .more2{
+        padding: 2px 5px;
+        border-radius: 5px;
+        background-color: darkcyan;
+        text-align: center;
+        vertical-align: middle;
+        color: white;
+        vertical-align: middle;
+        margin: 2px;  
+    }    
+    #content4 .c44{  
+        float: left;
+        margin: 15px 6px;
+        width: 400px;
+        height: 474px;
+        margin-top: 20px;
+    }    
+    #content4 .c44 .slider{  
+        
+        height: 474px; 
+    }    
+    #content4 .c44 .slider img{       
+        width: 400px;
+        height: 465px;
+        text-align: center;
+    } 
+    .right{
+        float: right;
+    }    
+    #content5{
+        background: url(images/main_37.jpg) no-repeat; 
+        /*width: 1240px;*/
+        width: 1240px; height: 230px;
+        /*background-size : cover;*/
+        margin-bottom:30px;       
+    }
+    #content5 #content5_text{
+        width: 550px;
+        margin-left: 630px;    
+        padding-top: 20px;
+    }
+    #content5 #content5_text #content5_title{
+        padding: 5px;
+        height: 30px;
+        line-height: 30px; /*세로로 가운데 정렬하기 위해서
+        height와 light-height값을 같에 설정해야한다.*/
+        border-radius: 2px;     
+        text-align: center;
+        font-family:'Nanum Gothic';
+        /*font-weight: bold;*/
+        font-size: 20px;
+        box-shadow: 0px 0px 10px black;
+        color: black; 
+        font-style: italic;        
+    }
+    #content5 #content5_text #content5_title span{
+        /*keyframe을 이용한 애니메이션 효과적용*/
+        animation-name: ani1;
+        animation-duration: 5s;/*효과가 나타나는데 까지 걸리는 시간*/
+        animation-iteration-count: infinite;/*무한반복*/
+    }
+   #content5 #content5_text #content5_subtext{
+        height: 130px;
+        /*background: red;*/
+        font-size: 16px;       
+        /*font-weight: bold;*/
+        line-height: 1.8em;        
+         
+        /*keyframe을 이용한 애니메이션 효과적용*/
+        overflow: hidden;    
+       /*white-space: nowrap;*/
+        animation-name: ani2;
+        animation-duration: 10s;/*효과가 나타나는데 까지 걸리는 시간*/
+        animation-iteration-count: infinite;/*무한반복*/
+    } 

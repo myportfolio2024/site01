@@ -1,0 +1,127 @@
+    #submain{
+        /*background-size:cover;*/        
+        margin-bottom: 50px; 
+    }
+    #submain img{ 
+        text-align: center;
+    }/*마진 0 auto 주면 가운데 정렬되는데
+    그림은 인라인 스타일이라서 텍스트 얼라인 써야 함
+    근데 일단 여기서 아무것도 안먹힘. */
+    #submain .slider{ 
+        height: 500px;
+        /*width: 1140px;*/       
+    }
+    #submain .slider img{
+      height: 500px;        
+      text-align: center;
+    }    
+    #submenu{   
+        height: 50px;
+        margin: 100px 0;
+    }
+    #submenu ul{
+        width: 1100px;
+        margin: 0 auto;text-align: center;
+    }
+    #submenu li{
+        border: 1px solid #333333;   
+        padding: 10px 0;
+        width: 160px;
+        margin-left: 5px;
+        color: #333333;
+    }
+    #submenu li:hover{
+        color: black;
+        font-weight: bold;         
+    }
+    #submenu li a{
+        font-size: 2em;
+        color: #333333;       
+    }
+    #submenu li a:hover{
+    }     
+    #content1{
+        /*background-color: gray;*/
+        margin: 0 auto;
+        font-size: 15px;
+    }
+    #content ul{  
+        margin: 0 auto;
+        width: 1200px; 
+    }
+    #content1 li{
+        width: 280px;
+        list-style: none;
+        display: inline-block;
+        margin-bottom: 60px;
+        margin-left: 20px;
+        text-align: center;
+    }
+    #content1 img{
+         width: 90%;
+        border-radius: 3px;
+    }    
+    #content1 img:hover{
+        transform: scale(1.1);
+        border-radius: 10px;
+    }
+    #content1 dd{
+        margin-top: 10px;
+    }
+    .next{
+        margin: 100px auto;         
+    }
+    .next ul{
+        width: 220px;
+        margin: 0 auto;
+        /*background-color: yellow;*/
+    }
+    .next li{
+        text-align: center;
+        margin-left: 20px;
+        font-size: 1.2em;
+    }
+    .next li a{
+    }
+    .next li a:hover{
+        color: black;
+        font-weight: bold;
+    }
+    footer{
+        background-color: #262626;
+        color: #828282;
+        padding: 50px 0; 
+        text-align: center;
+        font-size: 1em;
+    }
+    #wfooter{
+        margin: 0 auto;
+        width: 1000px;
+        /*background-color: aqua;*/
+        height: 100px;  
+    }/*바디 영역에서 클래스 wrap을 적용했는데
+    여기에서 너비 값을 다시 지정해줘도 오류안나는지 모르겠다*/
+    #lfooter{
+        height: 100px; 
+        width: 100px;
+        float: left;
+        /*vertical-align: middle;*/
+        /*background-color: blue;*/
+        text-align: center;
+        vertical-align: middle;         
+    }/*주어진 영역 내 이미지 가운데 비치 어케하나*/
+    #lfooter img{
+        width: 100px;
+    }
+    #rfooter{         
+        /*margin-left: 100px;*/
+        float: left;
+        width: 900px;
+        font-size: 0.9em;
+        height: 100px; 
+        line-height: 2em;
+        /*background-color: violet;*/       
+    }   
+    #rfooter li a{
+        color: #828282;
+    }

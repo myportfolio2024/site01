@@ -1,0 +1,98 @@
+    #event_t{
+        margin: 0 auto; 
+        margin-top: 30px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    #event_t .t1{
+        margin: 50px auto;
+        width: 200px;
+        border: 1px solid gray;
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 1.5em;         
+    }
+    #event_t .t1:hover{        
+        color: white;
+        background: #a41608;
+        border: 1px solid #a41608;
+    } 
+    #content1{  
+       /*background-color: green;*/
+    }
+    #content1 .c1{
+        width: 1040px;
+        height: 160px;
+        margin: 0 auto;
+        /*padding: 50px 0 50px 0;*/
+        border-top: 1px solid lightgray;
+        /*background-color: lightpink;*/
+        padding: 50px 100px 50px 100px; 
+    }
+    #content1 .c1 span{
+        height: 3em;
+        border-bottom: 1px dotted gray;
+        color: mediumpurple;
+        letter-spacing: 1px;
+    }
+    #content1 .c1 img{
+        border: 1px dashed white;
+    }
+    #content1 .c1 img:hover{
+        border: 1px dashed #be996d;
+        /* transform: rotate(1deg); */
+    }
+    #content1 li{
+         float: left;
+    }/*li는 한줄에 하나씩 보이지만. 나란히 놓기 위해서
+    플로트 레프트 적용하면 나란히 놓인다.*/
+    #content1 .c1 .etext{
+        width: 510px;
+        /*background-color: lightblue;*/
+        height: 158px;
+        padding: 0 50px;        
+    }
+    #content1 .c1 .etext .p1{
+        font-size: 16px;        
+        color: #282828;
+        line-height: 4em;       
+    }
+    #content1 .c1 .etext .p1:hover{
+        color: black;
+        text-decoration: underline;
+    }
+    #content1 .c1 .etext .p2{
+        font-size: 1.1em;
+        color:#464646;
+        line-height: 3em;
+    }
+    #content1 .c1 .etext .p3{
+        font-size: 0.9em;
+        color:#464646;
+    }
+    #content1 .c1 .ebox1{
+        margin-top: 20px;
+        width: 130px;
+        padding: 10px 0;
+        background-color: #be996d;
+        color: white;
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid #be996d;        
+    }
+    #content1 .c1 .ebox2{
+        width: 130px;
+        padding: 10px 0;
+        background-color: white;
+        color: #aa7a41;
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid #be996d;         
+    }
+    #content1 .c1 .ebox2 a{
+        color: #be996d;         
+    }
+    #content1 .c1 .ebox2 a:hover{        
+        border-bottom: 1px dotted #be996d;
+        padding-bottom: 4px;
+    }

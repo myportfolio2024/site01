@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>STARBUCKS</title> 
+ <!--구글폰트 추가-->
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Myeongjo&family=Noto+Sans+KR:wght@100&Single+Day&family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">
+ <!--구글폰트 끝-->
+<!--bxslider 소스시작-->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<!--bxslider 소스끝-->
+<style>
+body{
+        font-family: 'Nanum Gothic', sans-serif;
+        font-size: 14px; 
+        color: #212121;
+    }
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    img{
+        border: 0;
+    }
+    video{
+        border: 0;
+    }
+    a{
+        text-decoration: none;
+        color: #212121;
+    }
+    li{
+        list-style: none;
+        display: inline-block;
+        /*color: black;*/
+        text-decoration: none;
+    }
+    .wrap{
+        width: 1240px; 
+        /*background-color: yellowgreen;*/
+        margin: 0 auto;
+    } 
+    .clear{
+        clear: both;        
+    }    
+    header{
+        height: 210px;
+        background-color: #f5f4ef;
+    }
+    
+    #topm{
+        width: 1240px;
+        margin: 0 auto;
+    }
+    #topm ul{
+        float: right;
+        width: 360px; 
+        margin-top: 15px;        
+    }
+    #topm li {
+        vertical-align: middle;        
+        margin-left: 1px;   
+        font-size: 14px; 
+        font-family: 'Nanum Gothic', sans-serif;
+    } /*a태그는 인라인이라 정렬 안먹혀서 li에 적용*/ 
+    #topm li a{
+        color: darkgray;
+        margin: 0 1px;        
+    } 
+    #topm li a:hover{
+        color: black;                
+    } 
+    #topm li img{
+        margin-top:6px;
+    }
+    #logo{
+        float: left;
+    }    
+    nav{        
+        float: left;
+        margin-left: 60px;
+        height: 100px;
+        line-height: 100px;        
+        /*background-color: yellow;*/
+    }  /*영역확인하려고 백그라운드칼라 썼음*/
+    nav ul{
+        width: 800px;        
+    }
+    nav li{
+        margin-left: 120px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: 'Noto Sans KR', sans-serif;
+    }
+    nav li a{        
+        color: #333333;
+    }
+    nav li a:hover{
+        color: black;
+    }
+    #submain{
+        margin-top: 50px;
+        background: url(images/main_37.jpg) top no-repeat;
+        height: 180px;
+        background-size: 80%;
+    }/*백그라운드 보이게 하기 위해서 height설정*/
+    #submain p{
+        font-size:2em;
+        font-weight: bolder;
+        letter-spacing: 5px;
+        color: #f5f4ef;
+        height: 180px;
+        line-height: 180px;
+        text-align: center;
+        text-shadow: 2px 1px 10px black;
+        /*vertical-align:middle;*/
+    }
+    #grid{
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: 300px 1fr;
+         
+    }
+    #grid #sidemenu{ 
+        margin-left: 130px;
+        /*background: gray;*/
+    }
+    #grid #sidemenu .s_ul{
+        border-right: 1px solid lightgray;
+    }
+    #grid #sidemenu .s_ul a:hover{
+        border-bottom: 1px dashed #333333;
+    }
+    #grid #sidemenu .s_ul .s_li {
+        font-family: 'Nanum Gothic', sans-serif;
+        display: block;
+        font-size: 16px;
+        line-height: 3em;
+    }
+    #grid #sidemenu .s_ul .s_li a{
+        color: #555555
+    }
+    #grid #sidemenu .s_ul .s_li .ss_ul .ss_li{
+        display: block;
+        
+    } 
+    #grid #sidemenu .s_ul .s_li .ss_ul .ss_li a{
+        margin-left: 5px;
+        font-size: 15px;
+        color: #777777;
+    }
+    #grid #article{
+        padding: 0 150px 50px 50px;
+        font-family: 'Nanum Gothic', sans-serif;
+        display: block;
+        font-size: 16px;
+        line-height: 2.2em;
+        color: #555555;
+    }
+    #grid #article .a_p1{
+        margin: 1em;
+    }
+    #grid #article .a_p2{
+        font-size: 1.5em;
+        text-align: center;
+        margin: 1.5em;
+        color: #017143;
+    }
+    #grid #article .intro{
+    }
+    #grid #article .intro{         
+    }
+    #grid #article .intro figure{ 
+        text-align: right;
+    }
+    #grid #article .intro figure img{
+         width: 200px;
+    }
+    #grid #article .intro figure figcaption{
+        text-align: right; 
+        margin-right: 40px;
+    }
+    
+     #article .v1{
+        margin: 0 auto;
+        margin-top: 50px;
+        margin-bottom: 100px;
+    } 
+
+    /*v1안에 있는 요소를 가운데 정렬*/
+    /* /// 미디어 쿼리가 시작되는 지점입니다. /// */
+    /* screen width <800px */
+    @media(max-width:800px){
+        #grid{
+            display: block;
+        }/* 최대 너비가 800px일때 블록처리함
+        즉 800px보다 작을 때에만 적용됨 */
+        #sidemenu{
+            border-right: none;
+        }/*너비800px 보다 작아지면 
+        사이드메뉴의 우측선을 안보이게 함*/
+        #submain p{
+            font-size: 1em;              
+        }
+    }
+    /* 미디어쿼리 끝 */
+    footer{
+        background-color: #262626;
+        color: #828282;
+        padding: 50px 0; 
+        text-align: center;
+        font-size: 1em;
+    }
+    #wfooter{
+        margin: 0 auto;
+        width: 1000px;
+        /*background-color: aqua;*/
+        height: 100px;  
+    }/*바디 영역에서 클래스 wrap을 적용했는데
+    여기에서 너비 값을 다시 지정해줘도 오류안나는지 모르겠다*/
+    #lfooter{
+        height: 100px; 
+        width: 100px;
+        float: left;
+        /*vertical-align: middle;*/
+        /*background-color: blue;*/
+        text-align: center;
+        vertical-align: middle;
+         
+    }/*주어진 영역 내 이미지 가운데 비치 어케하나*/
+    #lfooter img{
+        width: 100px;
+    }
+    #rfooter{         
+        /*margin-left: 100px;*/
+        float: left;
+        width: 900px;
+        font-size: 0.9em;
+        height: 100px; 
+        line-height: 2em;
+        /*background-color: violet;*/       
+    }   
+    #rfooter li a{
+        color: #828282;
+    }
+        
+</style>    
+</head>
+<body>
+    
+<div class="clear"></div>
+<header>
+    <div id="thead" class="wrap">
+        <div id="topm">
+            <ul>
+            <li><a href="#">로그인 | </a></li>
+            <li><a href="#">회원가입 | </a></li>
+            <li><a href="#">매장찾기</a></li>
+           <li>
+                <a href="index.html">
+                    <img src="images/icon1.png" onmouseover="this.src='images/icon1_over.png';"
+                    onmouseout="this.src='images/icon1.png';" alt="logo">
+                </a>
+            </li >
+            <li>
+                <a href="#">
+                    <img src="images/icon2.png" onmouseover="this.src='images/icon2_over.png';"
+                    onmouseout="this.src='images/icon2.png';" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/icon3.png" onmouseover="this.src='images/icon3_over.png';"
+                    onmouseout="this.src='images/icon3.png';" alt="">
+                </a>
+            </li>
+            </ul>        
+        </div><!--topm의 닫힘태그-->
+    
+        <div id="logo" class="clear">
+            <a href="index.html">
+                <img src="images/logo.jpg" alt="로고">
+            </a>
+        </div><!--logo의 닫힘태그-->
+        <nav>
+            <ul>
+                <li><a href="sub1_1.html">메뉴</a></li>
+                <li><a href="sub2.html">브랜드소개</a></li>
+                <li><a href="sub3.html">매장안내</a></li>
+                <li><a href="sub4.html">이벤트</a></li>  
+            </ul>
+        </nav>
+    </div><!--thead의 닫힘태그-->
+</header>
+<div id="submain">
+    <!--아무런 기능 없는 이미지이므로 백그라운드로 삽입-->
+    <p>
+        STARBUCKS COMPANY INTRODUCE
+    </p>
+</div>
+<!----------그리드 시작 ------------------------------------------->
+<div id="grid"><!--sidemenu와 article를 감싸는 그리드입니다.-->
+    <div id="sidemenu">
+        <ul class="s_ul">
+            <li class="s_li">
+                <a href="#">
+                    <span>브랜드 소개</span>
+                </a>
+                <ul class="ss_ul">
+                    <li class="ss_li">
+                        <a href="#">
+                            <span>대표 인사말</span>
+                        </a>
+                    </li>
+                    <li class="ss_li">
+                        <a href="#">
+                            <span>브랜드 연혁</span>
+                        </a>
+                    </li>
+                    <li class="ss_li">
+                        <a href="#">
+                            <span>브랜드 스토리</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="s_li">
+                <a href="#">
+                    <span>사회공헌</span>
+                </a>
+            </li>
+            <li class="s_li">
+                <a href="#">
+                    <span>가맹정보</span>
+                </a>
+            </li>
+            <li class="s_li">
+                <a href="#">
+                    <span>창업설명회</span>
+                </a>
+            </li>
+        </ul>
+    </div><!--sidemenu의 닫힘태그-->
+    <div id="article">
+        <p class="a_p1">
+            오늘날 스타벅스는 전세계 76개 지역의 시장에서 수만여 명의 파트너들이 근무하는 세계 최고의 커피 전문 회사로,
+            최상급 아라비카 원두의 윤리적 구매와 40년 이상의 전문적인 로스팅 기술을 통한 철저한 품질 관리와 기업의 사회적 책임 완수를 통해 특별한 스타벅스의 경험과 문화를 한 잔의 커피와 함께 제공하며, 각 국의 커피 문화를 선도하고 있습니다. 가까운 스타벅스 매장이나 트위터, 페이스북, 블로그, 유튜브를 방문하면 매일 새로운 스타벅스를 경험할 수 있습니다.
+        </p>
+        <p class="a_p2">
+            <span>&quot;커피 이상의 특별한 경험을 소개합니다.&quot;</span>
+        </p>
+        <p class="a_p1">
+            세계인들의 생활 속에 스며들어 전 세계의 커피 문화를 선도하고 있는 스타벅스가 일상을 풍요롭게 하는 제3의 공간으로서
+            국내에서도 지역사회 속에서 고객 과 함께하며 새로운 커피문화를 정착시키고 있습니다.
+
+            스타벅스커피 코리아㈜스타벅스커피 코리아는
+            지난 1999년 이대앞 1호점을 시작으로 모든 매장을 직영하며,
+            하루 평균 30만명 이상의 고객들에게 특별한 스타벅스 경험을 전달하며
+            업계를 선도하는 기업으로 성장해 오고 있습니다.
+         </p>    
+         <p class="a_p2">
+             <span>&quot;&#40;주&#41;스타벅스커피 코리아는 스타벅스커피 인터내셔널과<br>
+             신세계 그룹의 공동투자로 설립된 합작 법인입니다.&quot;</span>
+        </p>
+        <p class="a_p1"> 
+            스타벅스는 국내에 새로운 커피 문화를 소개하며, 국내 협력사와의 동반성장, 글로벌 인재 양성, 고용창출, 환경보호 등 다양한 이해관계자들과 지역사회를 배려하는 사회적 책임과 성장을 함께 추구하고 있습니다. 스타벅스커피 직원“지역사회와 커피 지식을 나누고 있습니다.
+          </p> 
+        <p class="a_p1">   
+            스타벅스는 모든 직원을 파트너로 존중하고 있으며,
+            커피 전문가(Coffee Master) 과정을 통과한
+            숙련된 바리스타들은 뛰어난 지식과 열정을 통해
+            고객의 일상을 풍요롭게 하는 최고의 서비스를 제공해 드리며,
+            지역사회와 커피 지식을 나누고 있습니다.
+        </p>
+        <div class="intro">
+            <figure>
+            <img src="images/main_07.jpg" alt="">
+                <figcaption>스타벅스 나대표 올림</figcaption>
+            </figure>
+        </div><!--intro의 닫힘태그-->
+        <br>
+        <div class="v1">
+                        <h3>냠냠커피 맛난커피 좋아커피 커피냠냠</h3>
+                        <video controls width="500" autoplay loop muted>
+                            <source src="media/Espresso.mp4" type="video/mp4">
+                           죄송합니다. 비디오가 재생되지 않습니다.
+                        </video><!--controls 재생관련 버튼 보이게 함.
+                                    autoplay은 자동재생. 
+                                    loop은 반복재생.
+                                    muted은 무음속성을 뜻한다. 
+                                    무음속성으로 설정해야 자동재생 가능함-->
+                        <!--영상 저작권자 : Ernest_Roy
+                                        상업적 용도로 사용 가능. 출처 안 밝혀도 됨-->
+                </div><!--v1의 닫힘태그-->      
+                <div class="v1">
+                        <h3>아래의 재생버튼을 누르시면 배경음악을 들어보실 수 있습니다.</h3>
+                        <audio controls loop>
+                             <source src="audio/All_About.mp3" type="audio/mp3">
+                        </audio><!--영상은 자동재생처리 했지만 
+                                    배경음악은 자동재생을 싫어하는 사람들이 많아서 
+                                    오토플레이 적용안함-->
+                </div><!--v1의 닫힘태그-->             
+    </div><!--article의 닫힘태그-->   
+</div><!--gird의 닫힘태그-->
+<!---------그리드 끝 -------------------------------------------->
+<footer class="clear"><!--푸터 전체너비 차지-->
+    <div id="wfooter" class="wrap"><!--푸터 내용을 가운데 배치-->
+        <div id="lfooter"><!--푸터에 로고이미지 삽입-->
+            <a href="index.html">
+                <img src="images/logo_footer.png" >
+            </a>
+        </div><!--lfooter의 닫힘태그-->
+    
+        <div id="rfooter">
+                <ul>
+                    <li><a href="#">브랜드 소개 |</a></li>
+                    <li><a href="#">가맹점 문의 |</a></li>
+                    <li><a href="#">오시는 길 |</a></li>
+                    <li><a href="#">개인정보처리방침 |</a></li>
+                    <li><a href="#">멤버스 이용약관 |</a></li>
+                    <li><a href="#">고객의소리 |</a></li>
+                    <li><a href="#">사이트맵</a></li>            
+                </ul> 
+                <p>
+                사업자등록번호 &#58; 123&#45;45&#45;6789&nbsp;&nbsp;&nbsp;㈜스타벅스커피 코리아 대표이사 &#58; 나대표  
+                &nbsp;&nbsp;&nbsp;TEL &#58; 02&#41; 1234&#45;1234 개인정보 책임자 &#58; 나책임<br>
+                &copy; 2024 Starbucks Coffee Company. All Rights Reserved.
+                </p><!--공백 &nbsp;-->
+        </div><!--rfooter의 닫힘태그-->        
+    </div><!--wfooter의 닫힘태그-->
+</footer>    
+    
+</body>
+</html>

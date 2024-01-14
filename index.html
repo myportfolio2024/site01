@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>STARBUCKS</title><!-- 링크태그는 헤드안에만 존재한다.--> 
+    <!------구글 폰트 시작 ------------------------->
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Myeongjo&family=Noto+Sans+KR:wght@100&Single+Day&family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">    
+    <!------자바스크립트 템플릿 추가 ---------------------->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script><!--자바스크립트 최신 최소 버전-->
+    <!-----------bxslider 소스 시작 ---------------->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      $('.slider').bxSlider({
+          /*pager:false 슬라이더 버튼 안보이게 함. 기본값은 true*/
+          auto:true/* 자동으로 슬라이더 넘어가게 함*/,
+          speed: 500/*다음이미지로 바뀌는 시간.단위는 ms(mili seconds) */,
+          pause: 3000/*하나의 이미지가 멈춘채 보여지는 시간. 4000ms가 기본값*/,          
+      });
+    });
+    </script>
+    <!-- bxslider의 기본코드
+    <script>
+    $(document).ready(function(){
+      $('.slider').bxSlider();
+    });
+    </script>
+    -->
+    <!-------------bxslider 소스 끝----------------->
+    <script>/*p_close버튼을 누르면 pop1가 사라지게 함*/
+    $(function(){
+      $('.p_close').click(function(){
+        $('.pop1').hide();
+      });
+    });
+    </script>
+    <!--외부에서 공통 스타일 시트 불러옴-->
+    <link href="common.css" type="text/css" rel="stylesheet">
+    <!--외부에서 현재 페이지에만 적용되는 스타일 시트를 불러옴-->
+    <link href="main.css" type="text/css" rel="stylesheet">
+<style>/*팝업소스는 항상 젤 위*/ 
+    .pop1{
+       position:fixed;
+       top: 375px;
+       right: 35px;
+       z-index:1001;         
+    }/* 포지션 픽스 때문에 배너 위치가 화면에 고정되는 것.
+    팝업창이 스크롤 변화에 따라 이동하게 하려면 이를 생략.
+    z-index; 입력시 배너 이미지가 우선순위에 배치 됨. 
+    배너 이미지가 다른 이미지에 가려지지 않고. 젤 상단에 존재함.
+    position:absolute; 입력시 화면 상하 이동시 배너가 같이 이동.    
+    position:fixed; 입력시 화면 상하로 이동해도 배너 위치가 고정됨
+    늘 같은 위치에 있음. 계속 눈으로 볼 수 있음(↔absolute)
+    */
+    .pop1 .p_close{
+        text-align: right;
+    }
+    .pop1 .p_close img{
+        width: 30px;
+    }    
+    .pop1 .p_event{
+         text-align: right;
+    }
+    .pop1 .p_event img{
+       
+        width: 50%;
+    }
+    /*bxslider의 버튼위치 제어 */  
+    .bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    } 
+    
+    @keyframes ani1{
+        from{opacity: 0%;}  
+        70%{opacity: 100%;}
+        to{opacity: 100%;}
+        /* 글자 애니메이션 효과
+        content5 영역의 글자가 흐려졌다가 진해지는 효과
+        from{opacity: 100%;}
+        50%{opacity:70%;}
+        to{opacity: 100%;}
+        */}
+    @keyframes ani2{
+        /*
+        안보이던 글자가 위에서 아래로
+        서서히 나타나게 할때
+        */
+        from{height: 0px;  opacity: 0%;}         
+        50%{height: 130px; opacity: 100%;} 
+        55%{height: 130px; opacity: 0%;} 
+        60%{height: 130px; opacity: 100%;} 
+        65%{height: 130px; opacity: 0%;} 
+        70%{height: 130px; opacity: 100%;} 
+        75%{height: 130px; opacity: 0%;} 
+        80%{height: 130px; opacity: 100%;} 
+        to{height: 130px; opacity: 100%;}
+        /*
+        안보이던 글자가
+        왼쪽에서 오른쪽으로 서서히 나타날때
+        from{width: 0%; opacity: 100%;}
+        65%{width: 100%; opacity: 100%;}
+        70%{width: 100%; opacity: 0%;}
+        75%{width: 100%; opacity: 100%;}
+        80%{width: 100%; opacity: 0%;}
+        85%{width: 100%; opacity: 100%;}
+        90%{width: 100%; opacity: 0%;}
+        95%{width: 100%; opacity: 100%;}
+        to{width: 100%; opacity: 100%;}
+        */
+}
+ .bx-wrapper img {
+  width: 100%;
+  display: block;
+}
+.bx-wrapper {
+  -moz-box-shadow: 0 0 0 #ccc;
+  -webkit-box-shadow: 0 0 0 #ccc;
+  box-shadow: 0 0 0 #ccc;
+  border: none;
+  background: #fff;
+}	
+</style> 
+	
+</head>
+<body>     
+<!--프로모션 팝업 시작-->
+    <div class="pop1">
+        <div class="p_close"><!--팝업 닫힘 역할-->
+            <a href="#">
+                <img src="images/close.gif" alt="close button">
+            </a>
+        </div><!--b_close의 닫힘태그-->
+        <div class="p_event">
+            <div>
+                <a href="sub4.html">
+                    <img src="images/pop_m1.gif" alt="banner event">
+                </a>
+            </div>
+        </div><!--p_event의 닫힘태그-->
+    </div><!--pop1의 닫힘태그-->
+    <!--프로모션 팝업 끝-->
+<div class="clear"></div>
+<header>
+    <div id="thead" class="wrap">
+        <div id="topm">
+            <ul>
+            <li><a href="#">로그인 | </a></li>
+            <li><a href="#">회원가입 | </a></li>
+            <li><a href="#">매장찾기</a></li>
+           <li>
+                <a href="#">
+                    <img src="images/icon1.png" onmouseover="this.src='images/icon1_over.png';"
+                    onmouseout="this.src='images/icon1.png';" alt="">
+                </a>
+            </li >
+            <li>
+                <a href="index.html">
+                    <img src="images/icon2.png" onmouseover="this.src='images/icon2_over.png';"
+                    onmouseout="this.src='images/icon2.png';" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/icon3.png" onmouseover="this.src='images/icon3_over.png';"
+                    onmouseout="this.src='images/icon3.png';" alt="">
+                </a>
+            </li>
+            </ul>        
+        </div><!--topm의 닫힘태그-->
+    
+    <div id="logo" class="clear">
+        <a href="index.html">
+            <img src="images/logo.jpg" alt="로고">
+        </a>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="sub1_1.html">메뉴</a></li>
+            <li><a href="sub2.html">브랜드소개</a></li>
+            <li><a href="sub3.html">매장안내</a></li>
+            <li><a href="sub4.html">이벤트</a></li>
+        </ul>
+    </nav>
+    </div><!--thead의 닫힘태그-->
+</header>   
+<div id="main" class="clear slider">
+    <div>
+        <a href="sub1.html">
+            <img src="images/main1.jpg" alt="메인사진1">
+        </a>
+    </div>
+    <div>
+        <a href="sub1.html">
+            <img src="images/main2.jpg" alt="메인사진2">
+        </a>
+    </div>
+    <div>
+        <a href="sub1.html">
+            <img src="images/main3.jpg" alt="메인사진3">
+        </a>
+    </div>
+    
+</div> 
+
+<div class="wrap">
+    <div id="content1">
+        <div class="c1">            
+            <a href="sub2.html">
+                <img src="images/main_07.jpg" alt="공지사항">
+            </a>
+        </div>
+        <div class="c1">
+            <a href="sub4.html">
+                <img src="images/main_09.jpg" alt="이벤트">
+            </a>
+        </div>
+        <div class="c1">
+            <a href="sub3.html">
+                <img src="images/main_11.jpg" alt="매장찾기">
+            </a>
+        </div>    
+    </div>
+    <!-------------------------콘텐츠2 시작---------------->
+    <a href="sub4.html">
+        <div id="content2" class="wrap clear">
+        </div><!--콘텐츠 이미지가 크므로 배경이미지로 삽입-->
+    </a> 
+    <!-------------------------콘텐츠2 끝----------------->
+</div>
+
+<div id="content3">
+    <div class="wrap">
+        <!--<a>태그로 이미지나 텍스트에 링크를 연결하지않고
+        div 에 통채로 링크를 걸어서 div 어느곳을 클릭하더라도 
+        페이지 이동이 쉽도록 하였다.-->
+        <a href="sub1_2.html">
+             <div class="c3">
+                <b class=bigfont>Coffee</b><br>
+                5가지 아라비카 원두의 깊은향<br>
+                <span class="more1"><b>more</b></span>
+                <img src="images/main1_03.png" alt="커피">
+              </div>
+       </a>      
+       <a href="sub1_4.html">
+            <div class="c3">
+                    <b class=bigfont>Beverage</b><br>
+                    시즌별 다양한 음료<br>
+                    <span class="more1"><b>more</b></span>
+                    <img src="images/main1_05.png" alt="음료">
+            </div>
+         </a>
+         <a href="sub1_5.html">
+             <div class="c3">                
+                    <b class=bigfont>Bakery</b><br>
+                    각양각색의 맛있는 케익<br>
+                    <span class="more1"><b>more</b></span>
+                    <img src="images/main1_07.png" alt="베이커리"> 
+            </div>
+        </a>   
+        <a href="sub1_6.html">
+            <div class="c3">
+                <b class=bigfont>MD</b><br>
+                시즌별 한정판매 MD<br>
+                <span class="more1"><b>more</b></span>
+                <img src="images/main1_09.png" alt="엠디">      
+            </div><!--div class="c3"의 닫힘태그-->
+        </a>
+    </div><!--div class="wrap"의 닫힘태그-->
+</div>
+    
+<div id="content4" class="wrap clear">
+    <div class="c4">
+        <a href="#">
+            <div class="c4_1">
+                <p>
+                <b class=bigfont>&nbsp;Coffee Academy</b>
+                </p>
+                <p>
+                커피 아카데미에서 바리스타 수강생을 모집합니다.<br>
+                커피에 대한 기초적인 지식을 배우고 전문적인 과정을<br>
+                수료할 수 있습니다. 매 분기별로 수수정예 인원으로만<br>
+                    운영하며 검증된 실력이 있는 강사의 노하우를...<br>
+                </p><!--b태그는 p태그 안에 들어가면 
+                    내부css에서 속성제어 잘 안되더라-->
+                <p>
+                    <span class="more2">more</span>
+                </p>
+            </div>
+            <div class="c4_1">    
+                <img src="images/main_30.jpg" alt="커피강좌">
+            </div>
+        </a>
+    </div><!--c4의 닫힘태그-->
+    <div class="c4">
+        <a href="#">
+            <div class="c4_1">
+                <p>
+                    <b class=bigfont>
+                        &nbsp;Volunteer Work
+                    </b>
+                </p>
+                <p>
+                사회공헌활동으로 '서울숲 공원 돌보미 활동'을 통해서<br>
+                환경을 보호하는 캠페인을 하고 있으며 많은 직원들의<br>
+                적극적인 노력 덕분에 공원을 이용하는 시민분들께  <br>
+                아름다운 공원에서 산책을 하실 수 있습니다.<br>
+                </p>
+                <p>
+                    <span class="more2">more</span>
+                </p>
+                <!--스판태그는 인라인태그라서 정렬이 잘 안먹힘?-->
+            </div>
+            <div class="c4_2">
+                <img src="images/main_32.jpg" alt="사회공헌활동">
+            </div>
+        </a>
+    </div><!--c4의 닫힘태그-->
+    <div class="c44">
+        <div class="slider">
+            <div>
+                <a href=event.html>
+                <img src="images/main_page_event1.jpg" alt="event1">
+                </a>
+            </div>
+            <div>
+                <a href=event.html>
+                <img src="images/main_page_event2.jpg" alt="event1">
+                </a>
+            </div>  
+            <div>
+                <a href=event.html>
+                <img src="images/main_page_event3.jpg" alt="event1">
+                </a>
+            </div>  
+        </div><!--slider의 닫힘태그-->
+    </div><!--c4의 닫힘태그-->
+        
+</div><!--content5의 닫힘태그-->
+    
+<div id="content5" class="wrap clear">
+    <a href="#">
+        <!--<img src="images/main_37.jpg" alt="최상의원두소개"> -->
+    </a>
+    <div id="content5_text">
+        <div id="content5_title">
+            <span>
+                &nbsp;&nbsp;&quot;
+                최상의 커피는 최상의 원두로부터만 탄생합니다.
+                &quot;&nbsp;&nbsp;
+                <br><br>
+            </span>
+        </div>
+            <!--스타벅스 아라비카 원두는 일반 아라비카 원두와는 다릅니다.<br>
+            스타벅스는 당사의 원두가 최상의 품질을 갖추도록<br>
+            모든 단계에서 최선의 노력을 기울입니다. <br><br>
+            -->
+        <div id="content5_subtext">
+        <pre>     
+        추운 기후화 따뜻한 기후를 거치며 농도가 짙어지고
+        이렇게 단단해진 원두는 더 깊고 복합적인 맛을 냅니다.
+        스타벅스에서는 바로 이런 원두의 맛을 느껴보실 수 있습니다.       
+        </pre>
+        </div>
+    </div><!--content5_text의 닫힘태그-->
+</div><!--content5의 닫힘태그-->
+    
+<footer class="clear"><!--푸터 전체너비 차지-->
+    <div id="wfooter" ><!--푸터 내용을 가운데 배치-->
+        <div id="lfooter"><!--푸터에 로고이미지 삽입-->
+            <a href="index.html">
+                <img src="images/logo_footer.png" >
+            </a>
+        </div><!--lfooter의 닫힘태그-->
+    
+        <div id="rfooter">
+                <ul>
+                    <li><a href="#">브랜드 소개 |</a></li>
+                    <li><a href="#">가맹점 문의 |</a></li>
+                    <li><a href="#">오시는 길 |</a></li>
+                    <li><a href="#">개인정보처리방침 |</a></li>
+                    <li><a href="#">멤버스 이용약관 |</a></li>
+                    <li><a href="#">고객의소리 |</a></li>
+                    <li><a href="#">사이트맵</a></li>            
+                </ul> 
+                <p>
+                사업자등록번호 &#58; 123&#45;45&#45;6789&nbsp;&nbsp;&nbsp;㈜스타벅스커피 코리아 대표이사 &#58; 나대표  
+                &nbsp;&nbsp;&nbsp;TEL &#58; 02&#41; 1234&#45;1234 개인정보 책임자 &#58; 나책임<br>
+                &copy; 2024 Starbucks Coffee Company. All Rights Reserved.
+                </p><!--공백 &nbsp;-->
+        </div><!--rfooter의 닫힘태그-->        
+    </div><!--wfooter의 닫힘태그-->
+</footer>    
+</body>
+</html>

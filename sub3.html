@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>STARBUCKS</title>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Myeongjo&family=Noto+Sans+KR:wght@100&Single+Day&family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>/*b_close버튼을 누르면 banner가 사라지게 함. 
+근데 사실 이게 배너가 아니라 팝업임. 팝업 배우기전 혼자 공부해서 만들다 보니 
+이름이 배너가 되었음. 수정하기 귀찮아서 이름을 배너로 그대로 씀
+원래는 팝업이라 해야 함 */
+    $(function(){
+      $('.close_find').click(function(){
+        $('.pop2').hide();
+      });
+    });
+</script>
+<!--외부에서 공통 스타일 시트 불러옴-->
+    <link href="common.css" type="text/css" rel="stylesheet">
+    <!--외부에서 현재 페이지에만 적용되는 스타일 시트를 불러옴-->
+    <link href="sub3.css" type="text/css" rel="stylesheet">
+<!--  
+팝업소스 오류날 수 있어서
+내부 스타일시트 젤 상단에 입력
+--> 
+<style>
+.pop1 {
+        position: absolute;
+        top: 2010px;
+        left: 20px;
+        background: white; 
+        width: 300px; 
+        padding-bottom: 50px 0;
+    }
+.pop1 .poptitle1{
+        display: inline-block;
+        width: 148px;
+        text-align: center;
+        height: 50px;
+        line-height: 50px;
+        font-weight: bold;
+        background-color: #006633;
+        font-size: 1.2em;
+        color: white;
+    }
+.pop1 .poptitle1:hover{
+        background-color: gray;
+        color: white;
+    }
+.pop1 .poptitle2{
+        display: inline-block;
+        width: 148px;
+        text-align: center;
+        height: 50px;
+        line-height: 50px;
+        font-weight: bold;
+        background-color: white;
+        font-size: 1.2em;
+    }
+.pop1 .poptitle2:hover{
+        background-color: gray;
+        color: white;
+    }
+.pop1 .write{
+        margin: 30px auto;
+        width: 210px;       
+        text-align: left;
+        height: 30px;
+        line-height: 10px;        
+    }/* 배경 이미지 영역크기 확인시 아래의 코드를 이용한다.
+    백그라운드 칼라와 백그라운드 이미지 혼용가능.
+    background: rebeccapurple url(images/icon_find.jpg) center right no-repeat;*/
+.pop1 .write .p0{
+        font-size: 1em;        
+        color: darkgray;         
+    }
+.pop1 .write .p0 input{
+        margin: 0 auto;
+        width: 200px;
+        height:25px;
+        background:url(images/icon_find.jpg) right no-repeat;
+        background-size: 20px; 
+        padding: 5px;        
+    }
+.pop1 .write img{
+    }
+.pop1 .storelist{   
+        padding: 15px 30px;        
+    }    
+.pop1 .storelist .p1{ 
+        font-size: 1.4em;
+        font-weight: bold; 
+        line-height: 2.5em;   
+    } 
+.pop1 .storelist .p1 a:hover{
+        padding-bottom: 2px;
+        border-bottom: 1px solid #777777;
+    }/*text-decoration: underline; 로 밑줄 주면
+    글자와 줄사이 간격조절 못함. 선두께,색설정도 못함 */
+.pop1 .storelist .p2{ 
+        font-size: 1.2em; 
+        line-height: 2em;
+    }        
+.pop1 .storelist .p3{
+        font-size: 0.8em; 
+        line-height: 3em;
+        border-bottom: 1px dotted gray;
+        color: #555555;
+    }          
+.pop2{
+        position: fixed;
+        top: 460px;
+        right: 40px;
+    }
+.pop2 li{
+        display: block;
+    }
+.pop2 .close_find {
+        text-align: right;
+        width: 150px;
+    }
+.pop2 .close_find img{
+        width: 20px;
+        height: 20px;        
+    } 
+.pop2 .poplink{
+        width: 150px; height: 100px;
+        text-align: right;         
+        background: url(images/find.gif) top right no-repeat;
+        background-size:90px;        
+    } 
+</style>    
+</head>
+<body>
+<!--팝업1시작-->
+<div class="pop1">
+        <div class="poptitle1">
+            매장검색
+        </div> 
+        <div class="poptitle2">
+            지도검색
+        </div>
+        <div class="write clear">
+            <!--
+            <input type="text" value="매장명을 입력하세요."> 
+            -->
+            <p class="p0"><!--돋보기gif클릭시 여기 quickfind로 앵커이동한다.-->
+                <input id="quickfind" type="text" placeholder="매장명을 입력하세요.">
+            </p>
+        </div>
+        <div class="storelist">
+            <p class="p1"><a href="#">청담1호점</a></p>
+            <p class="p2">전화번호 02&#41;1234&#45;5678</p>
+            <p class="p3">주소 &#58; 서울특별시 강남구 청담동</p>
+        </div>
+        <div class="storelist">
+            <p class="p1"><a href="#">강남점</a></p>
+            <p class="p2">전화번호 02&#41;1234&#45;5678</p>
+            <p class="p3">주소 &#58; 서울특별시 강남구 청담동</p>
+        </div>
+        <div class="storelist">
+            <p class="p1"><a href="#">신촌점</a></p>
+            <p class="p2">전화번호 02&#41;1234&#45;5678</p>
+            <p class="p3">주소 &#58; 서울특별시 강남구 청담동</p>
+        </div>
+        <div class="storelist">
+            <p class="p1"><a href="#">압구정점</a></p>
+            <p class="p2">전화번호 02&#41;1234&#45;5678</p>
+            <p class="p3">주소 &#58; 서울특별시 강남구 청담동</p>
+        </div>
+</div><!--pop1의 닫힘태그-->
+<!------------팝업창 시작2---------------->
+<div class="pop2">
+        <ul>
+            <li class="close_find">
+                <a href="#">
+                    <img src="images/close.png" alt="">
+                </a>            
+            <li >            
+                 <a href="#quickfind"><!--같은 페이지내 앵커이동. 돋보기gif 클릭시 하단 검색창으로 이동-->
+                      <div class="poplink"></div>
+                 </a>                
+            </li>
+        </ul>
+</div><!--pop2의 닫힘태그-->
+<div class="clear"></div>
+<header>
+    <div id="thead" class="wrap">
+        <div id="topm">
+            <ul>
+            <li><a href="#">로그인 | </a></li>
+            <li><a href="#">회원가입 | </a></li>
+            <li><a href="#">매장찾기</a></li>
+           <li>
+                <a href="index.html">
+                    <img src="images/icon1.png" onmouseover="this.src='images/icon1_over.png';"
+                    onmouseout="this.src='images/icon1.png';" alt="logo">
+                </a>
+            </li >
+            <li>
+                <a href="#">
+                    <img src="images/icon2.png" onmouseover="this.src='images/icon2_over.png';"
+                    onmouseout="this.src='images/icon2.png';" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/icon3.png" onmouseover="this.src='images/icon3_over.png';"
+                    onmouseout="this.src='images/icon3.png';" alt="">
+                </a>
+            </li>
+            </ul>        
+        </div><!--topm의 닫힘태그-->
+    
+        <div id="logo" class="clear">
+            <a href="index.html">
+                <img src="images/logo.jpg" alt="로고">
+            </a>
+        </div><!--logo의 닫힘태그-->
+        <nav>
+            <ul>
+                <li><a href="sub1_1.html">메뉴</a></li>
+                <li><a href="sub2.html">브랜드소개</a></li>
+                <li><a href="sub3.html">매장안내</a></li>
+                <li><a href="sub4.html">이벤트</a></li>  
+            </ul>
+        </nav>
+    </div><!--thead의 닫힘태그-->
+</header>
+<!-----------서브 페이지 메인화면 시작------>    
+<div class="wrap">
+    <div id="submain">
+        <div id="subtitle">
+            <a href="#">
+                <img src="images/sub2_06.jpg" alt="map title"><br><br><br><br>
+                <img src="images/sub2_08.jpg" alt="title">
+            </a>
+        </div><!--subtitle의 닫힘태그-->
+    </div><!--submain 의 닫힘태그-->
+   
+    <div id="content1">
+        <div id="find">
+            <p class="bigfont">지도검색</p><br>
+            <ul>
+                
+                <li>
+                    <select class="list1">
+                        <option>지역을선택하세요</option>
+                        <option>서울특별시</option>
+                        <option>경기도</option>
+                        <option>인천광역시</option>
+                        <option>대구광역시</option>
+                        <option>부산광역시</option>
+                    </select>
+                </li>
+                <li>
+                    <select class="list1">
+                        <option>지역을먼저선택하세요.</option>
+                        <option>강남점</option>
+                        <option>역삼점</option>
+                        <option>청담점</option>
+                        <option>신촌점</option>
+                    </select>
+                </li>
+                <li>
+                    <input  class="list2" type="text" value="매장명 또는 주소를 입력하세요." >
+                </li>
+                <li>
+                    <input class="list3" type="button" value="검색">
+                </li>
+            </ul>
+        </div><!--find의 닫힘태그-->
+        <div id="find_icon">
+            <p class="bigfont">제공서비스</p><br>
+            <ul class="icon"><!---여기서부터 서비스 아이콘이 보여집니다.---->
+                <li>
+                    <a href="#">
+                       <img src="images/sub_icon_1.png" alt=""> 
+                        <p>와이파이</p> 
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/sub_icon_2.png" alt=""><br>
+                        <p>케이터링</p>   
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/sub_icon_3.png" alt=""><br>
+                        <p>이벤트</p>   
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/sub_icon_4.png" alt=""><br>
+                        <p>24시간 매장</p> 
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/sub_icon_5.png" alt=""><br>
+                        <p>주차가능</p>  
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/sub_icon_6.png" alt=""><br>
+                        <p>흡연석</p>  
+                    </a>
+                </li>
+            </ul>
+            <br>
+            <br>
+            <ul class="icon"><!----여기서 부터 아이콘 두번째줄 시작입니다.------->
+                <li>
+                    <a href="#">
+                        <img src="images/sub_icon_7.png" alt=""><br>
+                       <p>카드전용매장</p> 
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/sub_icon_8.png" alt=""><br>
+                        <p>파우더룸</p>   
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/sub_icon_9.png" alt=""><br>
+                        <p>북카페</p>  
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/sub_icon_10.png" alt=""><br>
+                        <p>비즈룸</p>   
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/sub_icon_11.png" alt=""><br>
+                        <p>미팅룸</p>   
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/sub_icon_12.png" alt=""><br>
+                        <p>드라이브스루</p>   
+                    </a>
+                </li>
+            </ul>
+        </div><!--find_icon의 닫힘태그-->
+        
+   
+    </div><!-------------content1의 닫힘태그----------------->    <!----------------------------------------------------->   
+    <div id="content2">
+        <table>
+            <thead>
+                <tr>
+                    <th>지역</th>
+                    <th>매장명</th>
+                    <th>주소</th>
+                    <th>전화번호</th>            
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>서울특별시</td>
+                    <td>스타벅스 1호점</td>
+                    <td>서울특별시 강남구 깜짝별 나라동 1234&#45;번지</td>
+                    <td>02&#41;1234&#45;5678</td>
+                </tr>
+                 <tr>
+                    <td>서울특별시</td>
+                    <td>스타벅스 1호점</td>
+                    <td>서울특별시 강남구 깜짝별 나라동 1234&#45;번지</td>
+                    <td>02&#41;1234&#45;5678</td>
+                </tr>
+                 <tr>
+                    <td>서울특별시</td>
+                    <td>스타벅스 1호점</td>
+                    <td>서울특별시 강남구 깜짝별 나라동 1234&#45;번지</td>
+                    <td>02&#41;1234&#45;5678</td>
+                </tr>
+                 <tr>
+                    <td>서울특별시</td>
+                    <td>스타벅스 1호점</td>
+                    <td>서울특별시 강남구 깜짝별 나라동 1234&#45;번지</td>
+                    <td>02&#41;1234&#45;5678</td>
+                </tr>
+                 <tr>
+                    <td>서울특별시</td>
+                    <td>스타벅스 1호점</td>
+                    <td>서울특별시 강남구 깜짝별 나라동 1234&#45;번지</td>
+                    <td>02&#41;1234&#45;5678</td>
+                </tr>
+                 <tr>
+                    <td>서울특별시</td>
+                    <td>스타벅스 1호점</td>
+                    <td>서울특별시 강남구 깜짝별 나라동 1234&#45;번지</td>
+                    <td>02&#41;1234&#45;5678</td>
+                </tr>
+                 <tr>
+                    <td>서울특별시</td>
+                    <td>스타벅스 1호점</td>
+                    <td>서울특별시 강남구 깜짝별 나라동 1234&#45;번지</td>
+                    <td>02&#41;1234&#45;5678</td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div><!--content2의 닫힘태그-->
+        
+    
+</div><!--wrap의 닫힘태그-->
+<!--------------------------------------------------------------->
+<!-----------------------지도 큰 이미지 시작------------------------>
+<div id="content3">
+    <img src="images/sub2_43.jpg" alt="map">
+    <!------------팝업창 1시작-------->
+    
+    
+</div>
+<!------------ 푸터 영역 시작 ---------------->
+<footer class="clear"><!--푸터 전체너비 차지-->
+    <div id="wfooter" class="wrap"><!--푸터 내용을 가운데 배치-->
+        <div id="lfooter"><!--푸터에 로고이미지 삽입-->
+            <a href="index.html">
+                <img src="images/logo_footer.png" >
+            </a>
+        </div><!--lfooter의 닫힘태그-->
+    
+        <div id="rfooter">
+                <ul>
+                    <li><a href="#">브랜드 소개 |</a></li>
+                    <li><a href="#">가맹점 문의 |</a></li>
+                    <li><a href="#">오시는 길 |</a></li>
+                    <li><a href="#">개인정보처리방침 |</a></li>
+                    <li><a href="#">멤버스 이용약관 |</a></li>
+                    <li><a href="#">고객의소리 |</a></li>
+                    <li><a href="#">사이트맵</a></li>            
+                </ul> 
+                <p>
+                사업자등록번호 &#58; 123&#45;45&#45;6789&nbsp;&nbsp;&nbsp;㈜스타벅스커피 코리아 대표이사 &#58; 나대표  
+                &nbsp;&nbsp;&nbsp;TEL &#58; 02&#41; 1234&#45;1234 개인정보 책임자 &#58; 나책임<br>
+                &copy; 2024 Starbucks Coffee Company. All Rights Reserved.
+                </p><!--공백 &nbsp;-->
+        </div><!--rfooter의 닫힘태그-->        
+    </div><!--wfooter의 닫힘태그-->
+</footer>    
+
+
+</body>
+</html>

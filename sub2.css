@@ -1,0 +1,99 @@
+    #submain{
+        margin-top: 50px;
+        background: url(images/main_37.jpg) top no-repeat;
+        height: 180px;
+        background-size: 80%;
+    }/*백그라운드 보이게 하기 위해서 height설정*/
+    #submain p{
+        font-size:2em;
+        font-weight: bolder;
+        letter-spacing: 5px;
+        color: #f5f4ef;
+        height: 180px;
+        line-height: 180px;
+        text-align: center;
+        text-shadow: 2px 1px 10px black;
+        /*vertical-align:middle;*/
+    }
+    #content1{
+        width: 900px;
+        margin: 0 auto;
+        margin-top: 50px;
+        background-color: darkseagreen;
+    }    
+    /* 사이드 메뉴 시작 */
+    #sidemenu{
+        float:left;
+        width: 150px;
+        display: inline-block;         
+        margin: 0 auto;
+    }
+    #sidemenu .s_ul{
+        border-right: 1px solid lightgray;
+    }
+    #sidemenu .s_ul a:hover{
+        border-bottom: 1px dashed #333333;
+    }
+    #sidemenu .s_ul .s_li {
+        font-family: 'Nanum Gothic', sans-serif;
+        display: block;
+        font-size: 16px;
+        line-height: 3em;
+    }
+    #sidemenu .s_ul .s_li a{
+        color: #555555
+    }
+    #sidemenu .s_ul .s_li .ss_ul{
+        display: none;
+    }/*사이드 메뉴의 하위메뉴를 숨김*/
+    #sidemenu .s_ul .s_li:hover .ss_ul{
+        display: block;
+    }/*사이드 메뉴에 마우스 오버시 
+    하위메뉴가 나타나게 함. 
+    마우스가 아웃되면 사이드의 하위메뉴 사라짐*/
+    #sidemenu .s_ul .s_li .ss_ul .ss_li{
+        display: block;       
+    } 
+    #sidemenu .s_ul .s_li .ss_ul .ss_li a{
+        margin-left: 5px;
+        font-size: 15px;
+        color: #777777;
+    }
+    #article{
+        margin: 0 auto;
+        margin-left: 50px;
+        width: 669px;
+        float: left;
+        font-family: 'Nanum Gothic', sans-serif;
+        display: inline-block;
+        font-size: 16px;
+        line-height: 2.2em;
+        color: #555555;         
+    }   
+    #article .a_p1{
+        margin: 1em;
+        text-align:justify;
+    }/*글자 양쪽정렬*/
+    #article .a_p2{
+        font-size: 1.5em;
+        text-align: center;
+        margin: 1.5em;
+        color: #017143;
+    }
+    #article .intro{
+    }
+    #article .intro figure{ 
+        text-align: right;
+    }
+    #article .intro figure img{
+         width: 200px;
+    }
+    #article .intro figure figcaption{
+        text-align: right; 
+        margin-right: 40px;
+    }    
+    #article .v1{
+        margin: 0 auto;
+        margin-top: 50px;
+        margin-bottom: 100px;
+    }
